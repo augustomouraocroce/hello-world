@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-body{
+/*body{
     overflow-x: hidden;
     overscroll-behavior-y: none;
-}
+}*/
 
 header {
     position: absolute;
@@ -16,61 +16,45 @@ header {
     z-index: 99;
 }
 
-h1 {
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 0.1rem;
-    color: #858585;
-}
-
-.container {
-    flex-grow: 1;
-    position: relative;
-    width: auto;
-}
-
 .container .fluid {
     padding: 0;
     margin: 0;
-    max-width: 100%;    
+    max-width: 100% !important;
 }
 
-header .header-inner a:first-child {
-    margin-left: 0;
-}
-
-.header-inner{
-    height: 7.5rem;
+header .header-inner {
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-header .header-inner a {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    margin: 0 3rem;
-    text-decoration: none;
-}
-
 a {
     text-decoration: none;
+    text-transform: uppercase;
     color: #151515;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
-a:hover {
-    opacity: .5;
-}
-
-.header-inner a {
+header .header-inner a .active{
     font-weight: 600;
     position: relative;
-    letter-spacing: 0.1rem;
 }
 
-.header-inner nav {
+header .header-inner a .active ::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    height: 4px;
+    width: 4px;
+    background: #626eff;
+    display: block;
+}
+
+header .header-inner nav {
     width: 100%;
     text-align: right;
     display: flex;
@@ -78,44 +62,28 @@ a:hover {
     justify-content: flex-end;
 }
 
+header .header-inner a:first-child {
+    margin-left: 0;
+}
+
+header .header-inner a {
+    font-size: .75rem;
+    margin: 0 3rem;
+}
+
+header .header-inner a span .disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
 .label {
-    font-size: 0.625rem;
-    background: #626eff;
-    color: white;
+    font-size: 0.675rem;
+    background-color: #626eff;
+    color: #ffffff;
     border-radius: 4px;
     padding: 4px;
-    text-transform: uppercase;
-    cursor: not-allowed;
+    text-transform: capitalize !important;
+    position: relative;
     margin-left: 0.5rem;
-    position: relative;
+    cursor: not-allowed;
 }
-
-.main-container {
-    max-width: 1244px;
-    position: relative;
-    height: 100vh;
-    width: 1080px;
-    display: flex;
-    margin-left: 20rem;
-    align-items: center;
-}
-
-.container {
-    flex-grow: 1;
-    margin: 0 auto;
-    padding: 0 32px;
-    position: relative;
-    width: auto;
-}
-
-.main-container .container .main-headline {
-    font-weight: 300;
-}
-
-.main-headline {
-    font-size: 2.441em;
-    line-height: 3.7rem;
-    margin-top: 4rem;
-    width: 800px;
-}
-
